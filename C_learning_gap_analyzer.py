@@ -292,3 +292,67 @@ def feedback_engine(issues):
         feedback.append(f"Line {issue['line']}: {message}")
 
     return feedback
+
+
+
+
+
+#____Used For Development Purpose____
+#used for validating analyzer logic
+# The following test cases were used during development to
+# validate analyzer rules and identify edge cases.
+#___________________________________
+
+# student_code=[
+# """
+#    #include <stdio.h>
+#    #include <conio.h> 
+#     int main() { 
+#       int a;
+#  printf("input two nums");
+#       scanf("%p", a)
+#       printf(a); 
+#     }  
+# ""","""
+#    #include <conio.h> 
+#    int main() { 
+#       int a;
+#       int b;
+#       scanf("%d",&a);
+#       scanf("%d",&b);
+#       printf("%d%d",a,b);
+#  return 0;
+#    } 
+# ""","""
+#   #include <stdio.h> 
+#    #include <string.h>
+#       int main() { 
+#       int a; 
+#       int b;
+#     scanf("%d", &a); 
+#     scanf("%d", &b); 
+#     printf("%d",&a);
+#     printf("%d",b)
+#  return 0
+#     }
+# ""","""
+# #include <stdio.h>
+#  int main() {
+#  int a;
+#  int b;
+#  printf("write the numbers:");
+#  scanf("%d", &a);
+#  scanf("%d", &b);
+#     printf("the numbers:");
+#      printf("%d and %d", a,b);
+#      return 0;
+#  }
+# """]
+
+# for i,code in enumerate(student_code,1):
+#     print(f"student{i}")
+#     raw_issues = analyze_c_code(code)
+#     student_feedback = feedback_engine(raw_issues)
+
+#     for msg in student_feedback:
+#         print(msg)
